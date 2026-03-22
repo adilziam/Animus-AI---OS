@@ -109,9 +109,9 @@ def get_signal(asset: str, market_state: dict) -> dict:
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+
 Signal engine and proprietary ML logic are excluded.
 
 ---
 
-*For partnerships or licensing: [hello@animusai.com](mailto:hello@animusai.com)*
+*For partnerships or licensing: Contact Me
