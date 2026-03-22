@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-03-21T14:32:00Z",
+  "feeds": [
+    { "symbol": "BTC/USD", "price": 67420.50,  "change_pct":  2.14,  "source": "sample" },
+    { "symbol": "ETH/USD", "price":  3512.30,  "change_pct":  1.87,  "source": "sample" },
+    { "symbol": "SOL/USD", "price":   184.65,  "change_pct":  4.10,  "source": "sample" },
+    { "symbol": "SPY",     "price":   524.71,  "change_pct":  0.32,  "source": "sample" },
+    { "symbol": "NVDA",    "price":   902.18,  "change_pct": -0.64,  "source": "sample" },
+    { "symbol": "TSLA",    "price":   241.37,  "change_pct":  3.22,  "source": "sample" },
+    { "symbol": "GOLD",    "price":  2341.40,  "change_pct":  0.51,  "source": "sample" },
+    { "symbol": "EUR/USD", "price":     1.08,  "change_pct": -0.11,  "source": "sample" }
+  ]
+}
