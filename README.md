@@ -12,10 +12,15 @@ The signal engine is proprietary and not included in this repository. This repo 
 Features
 --------------------------------------------------------------------------------------
 Live market data ingestion — real-time price feeds across crypto, equities, and forex
+
 Realistic paper execution — fill modeling with simulated slippage and latency
+
 ML signal integration — directional signals surfaced via a proprietary backend (76% accuracy)
+
 Performance dashboard — live P&L, win rate, drawdown, and attribution tracking
+
 Multi-asset coverage — 14+ markets in a unified portfolio view
+
 Responsive frontend — ships as a single index.html, deployable anywhere
 
 
