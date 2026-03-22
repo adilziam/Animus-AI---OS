@@ -1,107 +1,117 @@
-Animus AI — ML-Powered Trading Simulation Platform
------------------------------------------------------------
-A real-time trading simulation platform powered by proprietary machine learning. Live market data, zero capital risk.
+# Animus AI
 
+**ML-powered real-time trading simulation.** Live market data, zero capital risk.
 
-What Is Animus AI?
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+![Status](https://img.shields.io/badge/status-live-brightgreen?style=flat-square)
+![Users](https://img.shields.io/badge/users-5%2C000%2B-blue?style=flat-square)
+![Accuracy](https://img.shields.io/badge/signal%20accuracy-76%25-00e5a0?style=flat-square)
 
-Animus AI is a full-stack trading simulation platform that connects to live market feeds, runs ML-generated signals across equities, crypto, and forex, and lets users simulate trades in a realistic paper environment without putting real capital on the line.
-Built from zero to live as a solo product: scoped requirements, designed the data ingestion pipeline, led engineering, and launched to 5,000 users with a live frontend.
-The signal engine is proprietary and not included in this repository. This repo contains the frontend, data pipeline scaffolding, and simulation infrastructure.
+---
 
-Features
---------------------------------------------------------------------------------------
-Live market data ingestion — real-time price feeds across crypto, equities, and forex
+## Overview
 
-Realistic paper execution — fill modeling with simulated slippage and latency
+Animus AI is a full-stack trading simulation platform — live market feeds, ML-generated signals, and realistic paper execution across equities, crypto, and forex. No real capital required.
 
-ML signal integration — directional signals surfaced via a proprietary backend (76% accuracy)
+Built solo from zero to launch: scoped requirements, designed the data ingestion pipeline, led engineering, and shipped to **5,000 users** with a live frontend.
 
-Performance dashboard — live P&L, win rate, drawdown, and attribution tracking
+> The signal engine is proprietary and not included here. This repo contains the frontend, data pipeline scaffold, and simulation infrastructure.
 
-Multi-asset coverage — 14+ markets in a unified portfolio view
+---
 
-Responsive frontend — ships as a single index.html, deployable anywhere
+## Features
 
+| | |
+|---|---|
+| 📡 | Live price feeds across crypto, equities, and forex |
+| ⚡ | Paper execution with slippage + latency modeling |
+| 🧠 | ML signal integration — 76% directional accuracy |
+| 📊 | Live P&L, win rate, drawdown, and attribution |
+| 🔗 | 14+ markets in a unified portfolio view |
+| 🖥️ | Single `index.html` — deployable anywhere |
 
-Tech Stack
-LayerTechnologyFrontendVanilla HTML/CSS/JS (zero dependencies)FontsGoogle Fonts — Syne + DM MonoData pipelinePython (see /src)DeploymentAny static host (Vercel, Netlify, GitHub Pages)
+---
 
-Repository Structure
+## Stack
+
+| Layer | Tech |
+|---|---|
+| Frontend | Vanilla HTML / CSS / JS |
+| Fonts | Syne + DM Mono (Google Fonts) |
+| Pipeline | Python 3.9+ |
+| Deploy | Vercel · Netlify · GitHub Pages |
+
+---
+
+## Structure
+
+```
 animus-ai/
 ├── public/
-│   └── index.html          # Full frontend (self-contained)
+│   └── index.html        # Self-contained frontend
 ├── src/
-│   ├── feed.py             # Market data ingestion scaffold
-│   ├── simulator.py        # Paper trade execution engine
-│   └── signals.py          # Signal interface (proprietary logic not included)
+│   ├── feed.py           # Market data ingestion
+│   ├── simulator.py      # Paper trade execution
+│   └── signals.py        # Signal interface stub
 ├── data/
-│   └── sample_feed.json    # Sample market data for local dev
+│   └── sample_feed.json  # Sample data for local dev
 ├── .gitignore
 ├── LICENSE
 ├── package.json
 └── README.md
+```
 
-Getting Started
-1. Clone the repo
-bashgit clone https://github.com/your-username/animus-ai.git
+---
+
+## Quick Start
+
+**Frontend** — no build step needed:
+
+```bash
+git clone https://github.com/your-username/animus-ai.git
 cd animus-ai
-2. Run the frontend locally
-The frontend is a single self-contained HTML file — no build step required.
-bash# Option A: open directly
 open public/index.html
+# or: npx serve public
+```
 
-# Option B: serve locally
-npx serve public
-# or
-python3 -m http.server 8080 --directory public
-3. Run the data pipeline (optional)
-Requires Python 3.9+.
-bashpip install -r requirements.txt
+**Data pipeline** — requires Python 3.9+:
+
+```bash
+pip install -r requirements.txt
 python src/feed.py
+```
 
-Deployment
-Deploy to GitHub Pages
-bash# From repo root
+---
+
+## Deploy
+
+**GitHub Pages**
+```bash
 git subtree push --prefix public origin gh-pages
-Then enable GitHub Pages in your repo settings → branch: gh-pages → folder: /root.
-Deploy to Vercel / Netlify
-Both platforms auto-detect the public/ folder. Just connect your repo and deploy.
+```
+Then enable Pages in repo Settings → branch `gh-pages`.
 
-Signal Engine
-The ML signal engine that powers Animus AI — including model architecture, feature pipeline, and weighting logic — is proprietary and not open-sourced.
-This repo exposes only the signal interface contract. To connect your own model:
-python# src/signals.py
+**Vercel / Netlify** — connect the repo, set publish dir to `public/`, deploy.
 
+---
+
+## Signal Engine
+
+The ML signal logic is **proprietary and not included**. Plug in your own via `src/signals.py`:
+
+```python
 def get_signal(asset: str, market_state: dict) -> dict:
-    """
-    Replace this stub with your own signal logic.
+    # Return: { "asset", "direction": LONG|SHORT|FLAT, "confidence": 0–1 }
+    raise NotImplementedError("Add your signal logic here.")
+```
 
-    Returns:
-        {
-            "asset": str,
-            "direction": "LONG" | "SHORT" | "FLAT",
-            "confidence": float,   # 0.0 – 1.0
-        }
-    """
-    raise NotImplementedError("Plug in your own signal engine here.")
+---
 
-Sample Data
-A sample market feed is included at data/sample_feed.json for local development and testing.
-json{
-  "timestamp": "2026-03-21T14:32:00Z",
-  "feeds": [
-    { "symbol": "BTC/USD", "price": 67420.50, "change_pct": 2.14 },
-    { "symbol": "ETH/USD", "price": 3512.30,  "change_pct": 1.87 },
-    { "symbol": "SPY",     "price": 524.71,   "change_pct": 0.32 },
-    { "symbol": "NVDA",    "price": 902.18,   "change_pct": -0.64 },
-    { "symbol": "GOLD",    "price": 2341.40,  "change_pct": 0.51 }
-  ]
-}
+## License
 
-License
-MIT — see LICENSE.
-The signal engine and proprietary ML logic are excluded from this license and are not part of this repository.
+MIT — see [LICENSE](./LICENSE).
+Signal engine and proprietary ML logic are excluded.
 
-Contact
-Built by the Animus AI team. For partnership or licensing inquiries: hello@animusai.com
+---
+
+*For partnerships or licensing: [hello@animusai.com](mailto:hello@animusai.com)*
