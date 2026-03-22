@@ -140,7 +140,6 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 For partnerships, licensing inquiries, or general questions:
 - **GitHub Issues:** [Create an issue](https://github.com/adilziam/Animus-AI---OS/issues)
-- **Contact:** [adilziam@example.com](mailto:adilziam@example.com)
 
 ---
 
