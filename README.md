@@ -4,6 +4,7 @@ A real-time trading simulation platform powered by proprietary machine learning.
 
 
 What Is Animus AI?
+
 Animus AI is a full-stack trading simulation platform that connects to live market feeds, runs ML-generated signals across equities, crypto, and forex, and lets users simulate trades in a realistic paper environment — without putting real capital on the line.
 Built from zero to live as a solo product: scoped requirements, designed the data ingestion pipeline, led engineering, and launched to 5,000 users with a live frontend.
 The signal engine is proprietary and not included in this repository. This repo contains the frontend, data pipeline scaffolding, and simulation infrastructure.
