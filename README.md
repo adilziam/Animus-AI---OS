@@ -22,12 +22,12 @@ Animus AI is a full-stack trading simulation platform featuring live market feed
 
 | Feature | Description |
 |---------|-------------|
-| 📡 **Live Market Data** | Real-time price feeds across crypto, equities, and forex |
-| ⚡ **Paper Trading** | Execution simulation with slippage and latency modeling |
-| 🧠 **ML Signals** | Integrated signal engine with 76% directional accuracy |
-| 📊 **Live Analytics** | Real-time P&L, win rate, drawdown, and trade attribution |
-| 🔗 **Multi-Market** | 14+ markets unified in a single portfolio view |
-| 🖥️ **Zero Setup** | Single `index.html` — deploy anywhere (no build required) |
+| **Live Market Data** | Real-time price feeds across crypto, equities, and forex |
+| **Paper Trading** | Execution simulation with slippage and latency modeling |
+| **ML Signals** | Integrated signal engine with 76% directional accuracy |
+| **Live Analytics** | Real-time P&L, win rate, drawdown, and trade attribution |
+| **Multi-Market** | 14+ markets unified in a single portfolio view |
+| **Zero Setup** | Single `index.html` — deploy anywhere (no build required) |
 
 ---
 
